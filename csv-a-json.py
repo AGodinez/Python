@@ -16,8 +16,10 @@ lector = csv.DictReader(f, delimiter=",", quotechar='"')
 #Creacion del archivo .json
 with codecs.open(archivoOut, "w", encoding="utf-8") as salida:
    
+   #Recorremos la lista
    for l in lector:
       #Escribiendo los datos en el archivo
       salida.write(simplejson.dumps(l, ensure_ascii=False, use_decimal=True)+"\n")
    print "Archivo ", archivoOut, "creado exitosamente!"
+
 f.close() #Cerramos el archivo
